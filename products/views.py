@@ -9,6 +9,6 @@ def all_products(request):
         'products' : products,
     }
 
-    return render(request, 'products/products.html, context')
+    return render(request, 'products/products.html', context)
 
 
