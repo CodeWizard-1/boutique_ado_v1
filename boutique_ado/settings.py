@@ -11,23 +11,31 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 import dj_database_url
+
 from pathlib import Path
-if os.path.exists('env.py'):
+
+# if os.path.exists('env.py'):
+#     import env
+
+if os.path.isfile("env.py"):
     import env
+
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s92#6%uzgo2x+akwsg6=wi^7!qsm9)s7sha)235j@rqkk%8h1_'
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['boutique-ado2023-42be5bd1502d.herokuapp.com','8000-codewizard1-boutiqueado-jfoguu7kunf.ws-eu106.gitpod.io']
 
@@ -140,6 +148,8 @@ else:
         }
     }
 
+
+# DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
