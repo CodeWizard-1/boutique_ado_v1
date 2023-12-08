@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-s92#6%uzgo2x+akwsg6=wi^7!qsm9)s7sha)235j@rqkk%8h1_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-codewizard1-boutiqueado-jfoguu7kunf.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['boutique-ado2023-42be5bd1502d.herokuapp.com','8000-codewizard1-boutiqueado-jfoguu7kunf.ws-eu106.gitpod.io']
 
 # Application definition
 
